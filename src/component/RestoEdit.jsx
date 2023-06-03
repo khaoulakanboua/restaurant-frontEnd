@@ -35,7 +35,7 @@ const RestoEdit = () => {
   }, []);
 
   const loadResto = async () => {
-    const result = await axios.get(`/api/resto/findbyid/${id}`);
+    const result = await axios.get(`https://restaurant-production-f803.up.railway.app/api/resto/findbyid/${id}`);
     setRestos(result.data);
     setNom(result.data.nom);
     setAdresse(result.data.adresse);
