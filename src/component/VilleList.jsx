@@ -37,7 +37,7 @@ const VilleList = () => {
  
 
   useEffect(() => {
-    axios.get("/api/villes/").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/villes/").then((response) => {
       setVilles(response.data);
     });
   }, []);
