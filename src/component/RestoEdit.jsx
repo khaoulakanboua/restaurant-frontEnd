@@ -29,7 +29,7 @@ const RestoEdit = () => {
   }, []);
 
   useEffect(() => {
-    axios.get("/api/resto/all").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/resto/all").then((response) => {
       setRestos(response.data);
     });
   }, []);
@@ -60,13 +60,13 @@ const RestoEdit = () => {
   };
 
   useEffect(() => {
-    axios.get("/api/villes/").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/villes/").then((response) => {
       setCities(response.data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get("/api/series/all").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/series/all").then((response) => {
       setSeries(response.data);
     });
   }, []);
@@ -74,7 +74,7 @@ const RestoEdit = () => {
   const handleCityChange = (event) => {
     const cityId = event.target.value;
     setSelectedCityId(cityId);
-    axios.get(`/api/zones/ville/zones/${cityId}`).then((response) => {
+    axios.get(`https://restaurant-production-f803.up.railway.app/api/zones/ville/zones/${cityId}`).then((response) => {
       const zonesData = response.data.map((zone) => ({
         id: zone.id,
         nom: zone.nom
@@ -103,7 +103,7 @@ const RestoEdit = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`/api/resto/${id}`, {
+      .put(`https://restaurant-production-f803.up.railway.app/api/resto/${id}`, {
         nom,
         adresse,
         langitude,
