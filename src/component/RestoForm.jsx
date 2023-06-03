@@ -97,7 +97,6 @@ const ZoneByCity = () => {
         "latitude": latitude,
         "h_Open": h_open,
         "h_Close": h_close,
-        "week": concatenatedString,
         "rank": rank,
 
         "zone": {
