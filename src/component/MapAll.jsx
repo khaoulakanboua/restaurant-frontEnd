@@ -19,7 +19,7 @@ class GoogleMapComponent extends Component {
   }
 
   componentDidMount() {
-   axios.get('/api/resto/all')
+   axios.get('https://restaurant-production-f803.up.railway.app/api/resto/all')
      .then(response => {
        const data = response.data; // Assuming the API response is an array of objects with latitude and longitude properties
  

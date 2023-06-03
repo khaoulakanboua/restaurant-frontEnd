@@ -38,7 +38,7 @@ const SerieList = () => {
   }, []);
   const save = (event) => {
     event.preventDefault();
-    axios.post("/api/series/save", { nom }).then((response) => {
+    axios.post("https://restaurant-production-f803.up.railway.app/api/series/save", { nom }).then((response) => {
       const newSerie = response.data;
       setSeries([...series, newSerie]); // Add the new city to the existing list
       setNom(""); // Clear the input field
@@ -53,7 +53,7 @@ const SerieList = () => {
   };
 
   const confirmDelete = () => {
-    axios.delete(`/api/series/delete/${selectedSerie}`).then(() => {
+    axios.delete(`https://restaurant-production-f803.up.railway.app/api/series/delete/${selectedSerie}`).then(() => {
       setSeries(series.filter((item) => item.id !== selectedSerie));
     });
 
@@ -72,7 +72,7 @@ const SerieList = () => {
     };
     console.log("upForm ", upForm);
     return axios
-      .put(`/api/series/${id}`, { nom: newNom })
+      .put(`https://restaurant-production-f803.up.railway.app/api/series/${id}`, { nom: newNom })
       .then(() => {
         const updatedSeries = series.map((serie) => {
           if (serie.id === id) {

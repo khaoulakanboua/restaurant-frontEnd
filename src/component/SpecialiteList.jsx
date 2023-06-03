@@ -32,13 +32,13 @@ const SpecilaiteList = () => {
   const [nom, setNom] = useState("");
 
   useEffect(() => {
-    axios.get("/api/specialite/all").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/specialite/all").then((response) => {
       setSpecialities(response.data);
     });
   }, []);
   const save = (event) => {
     event.preventDefault();
-    axios.post("/api/specialite/save", { nom }).then((response) => {
+    axios.post("https://restaurant-production-f803.up.railway.app/api/specialite/save", { nom }).then((response) => {
       const newSpecialite = response.data;
       setSpecialities([...specialities, newSpecialite]); // Add the new city to the existing list
       setNom(""); // Clear the input field
@@ -53,7 +53,7 @@ const SpecilaiteList = () => {
   };
 
   const confirmDelete = () => {
-    axios.delete(`/api/specialite/delete/${selectedSpecialite}`).then(() => {
+    axios.delete(`https://restaurant-production-f803.up.railway.app/api/specialite/delete/${selectedSpecialite}`).then(() => {
       setSpecialities(specialities.filter((item) => item.id !== selectedSpecialite));
     });
 
@@ -72,7 +72,7 @@ const SpecilaiteList = () => {
     };
     console.log("upForm ", upForm);
     return axios
-      .put(`/api/specialite/${id}`, { nom: newNom })
+      .put(`https://restaurant-production-f803.up.railway.app/api/specialite/${id}`, { nom: newNom })
       .then(() => {
         const updatedSpecialities = specialities.map((specialite) => {
           if (specialite.id === id) {

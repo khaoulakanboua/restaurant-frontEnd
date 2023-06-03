@@ -15,7 +15,7 @@ const GoogleMapComponent = ({ google }) => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`/api/resto/findbyid/${id}`)
+    axios.get(`https://restaurant-production-f803.up.railway.app/api/resto/findbyid/${id}`)
       .then(response => {
         const data = response.data;
   

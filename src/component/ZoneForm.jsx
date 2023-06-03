@@ -8,14 +8,14 @@ const ZoneForm = ({ onZoneAdded }) => {
 
 
     useEffect(() => {
-        axios.get("/api/villes/").then((response) => {
+        axios.get("https://restaurant-production-f803.up.railway.app/api/villes/").then((response) => {
             setVilles(response.data);
         });
     }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("/api/zones/save", {
+        axios.post("https://restaurant-production-f803.up.railway.app/api/zones/save", {
             nom,
             ville: {
                 id: villeId

@@ -12,7 +12,7 @@ const SpecialiteForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("/api/specialite/save", { nom }).then(() => {
+    axios.post("https://restaurant-production-f803.up.railway.app/api/specialite/save", { nom }).then(() => {
       navigate("/");
     });
   };

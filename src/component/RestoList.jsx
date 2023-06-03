@@ -22,7 +22,7 @@ const RestoList = () => {
   const [deleteRestaurantId, setDeleteRestaurantId] = useState(null);
 
   useEffect(() => {
-    axios.get("/api/resto/all").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/resto/all").then((response) => {
       setRestos(response.data);
     });
   }, []);
@@ -39,7 +39,7 @@ const RestoList = () => {
 
   const handleDelete = () => {
     axios
-      .delete(`/api/resto/delete`, {
+      .delete(`https://restaurant-production-f803.up.railway.app/api/resto/delete`, {
         data: { id: deleteRestaurantId }
       })
       .then(() => {

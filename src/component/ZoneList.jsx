@@ -66,7 +66,7 @@ const ZoneList = () => {
       okType: "danger",
       cancelText: "No",
       onOk() {
-        axios.delete(`/api/zones/delete/${zoneId}`).then(() => {
+        axios.delete(`https://restaurant-production-f803.up.railway.app/api/zones/delete/${zoneId}`).then(() => {
           setZones(zones.filter((zone) => zone.id !== zoneId));
         });
       },
@@ -79,7 +79,7 @@ const ZoneList = () => {
   const save = (event) => {
     event.preventDefault();
     axios
-      .post("/api/zones/save", {
+      .post("https://restaurant-production-f803.up.railway.app/api/zones/save", {
         nom,
         ville: {
           id: villeId,
@@ -106,7 +106,7 @@ const ZoneList = () => {
     };
 
     return axios
-      .put(`/api/zones/update/${id}`, updatedZone)
+      .put(`https://restaurant-production-f803.up.railway.app/api/zones/update/${id}`, updatedZone)
       .then(() => {
         form.resetFields();
         setOpen(false);
@@ -143,7 +143,7 @@ const ZoneList = () => {
   };
 
   useEffect(() => {
-    axios.get(`/api/villes/`).then((res) => {
+    axios.get(`https://restaurant-production-f803.up.railway.app/api/villes/`).then((res) => {
       setAllV(res.data);
     });
   }, []);

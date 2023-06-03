@@ -63,13 +63,13 @@ const handleFavoriteClick = (restoId) => {
 
 
   useEffect(() => {
-    axios.get("/api/villes/").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/villes/").then((response) => {
       setCities(response.data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get("/api/series/all").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/series/all").then((response) => {
       setSeries(response.data);
 
     });
@@ -77,7 +77,7 @@ const handleFavoriteClick = (restoId) => {
 
   const handleCityChange = (value) => {
     setSelectedCityId(value);
-    axios.get(`/api/zones/ville/zones/${value}`).then((response) => {
+    axios.get(`https://restaurant-production-f803.up.railway.app/api/zones/ville/zones/${value}`).then((response) => {
       setZones(response.data);
       console.log(value);
     });
@@ -86,7 +86,7 @@ const handleFavoriteClick = (restoId) => {
   const handleZoneChange = (value) => {
 
     setSelectedZoneId(value);
-    axios.get(`/api/resto/filter/${selectedCityId}/${value}`).then((response) => {
+    axios.get(`https://restaurant-production-f803.up.railway.app/api/resto/filter/${selectedCityId}/${value}`).then((response) => {
       setRestos(response.data);
       console.log(response.data);
     });
@@ -97,7 +97,7 @@ const handleFavoriteClick = (restoId) => {
   const handleSerieChange = (value) => {
 
     setSelectedSerieId(value);
-    axios.get(`/api/resto/filter2/${selectedCityId}/${selectedZoneId}/${value}`).then((response) => {
+    axios.get(`https://restaurant-production-f803.up.railway.app/api/resto/filter2/${selectedCityId}/${selectedZoneId}/${value}`).then((response) => {
       setRestos(response.data);
       console.log(response.data);
     });
@@ -109,7 +109,7 @@ const handleFavoriteClick = (restoId) => {
 
   useEffect(() => {
     const fetchRestaurants = () => {
-      axios.get("/api/resto/all")
+      axios.get("https://restaurant-production-f803.up.railway.app/api/resto/all")
         .then((response) => {
           const updatedRestos = response.data.map((resto) => ({
             ...resto,

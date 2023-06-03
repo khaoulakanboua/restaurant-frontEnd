@@ -43,7 +43,7 @@ const VilleList = () => {
   }, []);
   const save = (event) => {
     event.preventDefault();
-    axios.post("/api/villes/save", { nom }).then((response) => {
+    axios.post("https://restaurant-production-f803.up.railway.app/api/villes/save", { nom }).then((response) => {
       const newCity = response.data;
       setVilles([...villes, newCity]); // Add the new city to the existing list
       setNom(""); // Clear the input field
@@ -56,7 +56,7 @@ const VilleList = () => {
   };
 
   const confirmDelete = () => {
-    axios.delete(`/api/villes/delete/${selectedVille}`).then(() => {
+    axios.delete(`https://restaurant-production-f803.up.railway.app/api/villes/delete/${selectedVille}`).then(() => {
       setVilles(villes.filter((item) => item.id !== selectedVille));
     });
 
@@ -99,7 +99,7 @@ const VilleList = () => {
       nom: newNom,
     };
     return axios
-      .put(`/api/villes/${id}`, { nom: newNom })
+      .put(`https://restaurant-production-f803.up.railway.app/api/villes/${id}`, { nom: newNom })
       .then(() => {
         const updatedVilles = villes.map((ville) => {
           if (ville.id === id) {

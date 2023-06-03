@@ -12,7 +12,7 @@ const VilleForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("/api/villes/save", { nom }).then(() => {
+    axios.post("https://restaurant-production-f803.up.railway.app/api/villes/save", { nom }).then(() => {
       navigate("/ville");
     });
   };

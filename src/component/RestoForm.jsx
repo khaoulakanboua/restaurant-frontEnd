@@ -41,12 +41,12 @@ const ZoneByCity = () => {
     };
   
   useEffect(() => {
-    axios.get("/api/villes/").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/villes/").then((response) => {
       setCities(response.data);
     });
   }, []);
   useEffect(() => {
-    axios.get("/api/series/all").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/series/all").then((response) => {
       setSeries(response.data);
     });
   }, []);
@@ -70,7 +70,7 @@ const ZoneByCity = () => {
   const handleCityChange = (event) => {
     const cityId = event.target.value;
     setSelectedCityId(cityId);
-    axios.get(`/api/zones/ville/zones/${cityId}`).then((response) => {
+    axios.get(`https://restaurant-production-f803.up.railway.app/api/zones/ville/zones/${cityId}`).then((response) => {
       setZones(response.data);
     });};
   const handleRankChange = (event) => {
@@ -89,7 +89,7 @@ const ZoneByCity = () => {
     };
   const handleSubmit = (event) => {
       event.preventDefault();
-      axios.post("/api/resto/save", {
+      axios.post("https://restaurant-production-f803.up.railway.app/api/resto/save", {
         
         "nom":nom,
         "adresse": adresse,
