@@ -136,7 +136,7 @@ const RestoList = () => {
                 <Button
                   variant="outlined"
                   component={Link}
-                  to={`https://restaurant-production-f803.up.railway.app/editresto/${resto.id}`}
+                  to={`/editresto/${resto.id}`}
                   sx={{ marginRight: '8px' }}
                   color="success"
                 >
