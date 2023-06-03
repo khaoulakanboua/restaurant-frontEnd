@@ -32,7 +32,7 @@ const SerieList = () => {
   const [nom, setNom] = useState("");
 
   useEffect(() => {
-    axios.get("/api/series/all").then((response) => {
+    axios.get("https://restaurant-production-f803.up.railway.app/api/series/all").then((response) => {
       setSeries(response.data);
     });
   }, []);

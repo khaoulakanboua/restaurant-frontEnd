@@ -37,7 +37,7 @@ const ZoneList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(`/api/zones/all`);
+      const result = await axios(`https://restaurant-production-f803.up.railway.app/api/zones/all`);
       setZones(result.data);
     };
     fetchData();
